@@ -1,8 +1,7 @@
 # Air Quality Monitor 空气质量监测仪 - PM2.5, 甲醛, 温湿度
 
 
-
-<img src="https://github.com/liliang9693/ext-DFRobot_AirQualityMonitorSensor/blob/master/arduinoC/_images/featured.png" width="450" height="300" align=center>
+![](./arduinoC/_images/featured.png)
 
 ---------------------------------------------------------
 
@@ -17,10 +16,10 @@
 
 ## Blocks
 
-![image](https://github.com/liliang9693/ext-DFRobot_AirQualityMonitorSensor/blob/master/arduinoC/_images/block.png)
+![](./arduinoC/_images/block.png)
 
 ## 示例
-![image](https://github.com/liliang9693/ext-DFRobot_AirQualityMonitorSensor/blob/master/arduinoC/_images/example.png)
+![](./arduinoC/_images/example.png)
 
 
 
