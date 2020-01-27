@@ -1,9 +1,8 @@
 
 //% color="#AA278D" iconWidth=50 iconHeight=40
-namespace GestureTouchSensor {
+namespace DFRobot_SEN0233_AirQualityMonitor {
 
-
-    //% block="GestureTouchSenso Initliallize Pin [SSER] Rx[SSTXD] Tx[SSRXD]" blockType="command"
+    //% block="Air Quality Monitor Initliallize Pin [SSER] Rx[SSTXD] Tx[SSRXD]" blockType="command"
     //% SSER.shadow="dropdown" SSER.options="SSER"
     //% SSRXD.shadow="dropdown" SSRXD.options="SSRXD"
     //% SSTXD.shadow="dropdown" SSTXD.options="SSTXD"
@@ -13,20 +12,18 @@ namespace GestureTouchSensor {
         let rx = parameter.SSRXD.code;
         let tx = parameter.SSTXD.code;
 
-            Generator.addInclude("includeGT","#include <DFRobot_Gesture_Touch.h>");
+            Generator.addInclude("includeAQM","#include <DFRobot_SEN0233_AirQualityMonitor.h>");
             Generator.addInclude("includesoftSerial","#include <SoftwareSerial.h>");
                 
             Generator.addObject("softSerialObject","SoftwareSerial",`${sser}(${rx}, ${tx});`);
-            Generator.addObject("GestureObject"+sser,"DFRobot_Gesture_Touch",`DFGT(&${sser});`);
-            Generator.addObject("quanjubianliang","float",`GTVar=-1;`);
-
-            Generator.addSetup("GTSerialSetup"+sser,`${sser}.begin(9600);`);
-            Generator.addSetup("distance",`DFGT.setGestureDistance(10);`)
-            
+            Generator.addObject("AQMObject"+sser,"DFRobot_SEN0233_AirQualityMonitor",`AQM_SEN0233(&${sser});`);
+  
+            Generator.addSetup("AQMSerialSetup"+sser,`${sser}.begin(9600);`);
+          
 
     }
-    //% board="arduino,esp32"
-    //% block="GestureTouchSensor Initliallize Pin [SER] Rx[TXD] Tx[RXD]" blockType="command"
+
+    //% block="Air Quality Monitor Initliallize Pin [SER] Rx[TXD] Tx[RXD]" blockType="command"
     //% SER.shadow="dropdown" SER.options="SER"
     //% RXD.shadow="dropdown" RXD.options="RXD"
     //% TXD.shadow="dropdown" TXD.options="TXD"
@@ -36,61 +33,41 @@ namespace GestureTouchSensor {
         let rx = parameter.RXD.code;
         let tx = parameter.TXD.code;
 
-            Generator.addInclude("includeGT","#include <DFRobot_Gesture_Touch.h>");
+            Generator.addInclude("includeAQM","#include <DFRobot_SEN0233_AirQualityMonitor.h>");
 
-            Generator.addObject("GestureObject"+ser,"DFRobot_Gesture_Touch",`DFGT(&${ser});`);
-            Generator.addObject("quanjubianliang","float",`GTVar=-1;`);
+            Generator.addObject("AQMObject"+ser,"DFRobot_SEN0233_AirQualityMonitor",`AQM_SEN0233(&${ser});`);
 
-            Generator.addSetup("GTSerialSetup",`${ser}.begin(9600,${rx}, ${tx});`);
-            Generator.addSetup("distance",`DFGT.setGestureDistance(10);`)
+            Generator.addSetup("AQMSerialSetup",`${ser}.begin(9600);`);
 
     }
 
-    //% block="GestureTouchSensor request once" blockType="command"
+    
+    //% block="Air Quality Monitor Read data once" blockType="command"
     export function readSensor(){
-        Generator.addCode("GTVar=DFGT.getAnEvent();");
+        Generator.addCode("AQM_SEN0233.DFRobot_SEN0233_readData();");
     }
 
-    //% block="GestureTouchSensor [RSLT] is true?" blockType="boolean"
-    //% RSLT.shadow="dropdown" RSLT.options="RSLT"
-    export function rslt(parameter: any){
-        let rslt=parameter.RSLT.code;
-        Generator.addCode(`(GTVar==${rslt})`);
-    }
-
-    //% block="GestureTouchSensor set distence is [DT] cm" blockType="command"
-    //% DT.shadow="range" DT.params.min="0" DT.params.max="30" DT.defl="20"
-    export function setDistence(parameter: any){
-        let dt=parameter.DT.code;
-        
-        Generator.addSetup("distance",`DFGT.setGestureDistance(${dt});`,true)
-    }
-
-    
-    //% block="GestureTouchSensor set sleep is [SP]" blockType="command"
-    //% SP.shadow="number"  SP.defl="5"
-    export function setSleep(parameter: any){
-        let sp=parameter.SP.code;
-        Generator.addSetup("sleep",`DFGT.setSleep(${sp});`,true);
-    }
-
-    
-    //% block="GestureTouchSensor set[DE] enable is [DERSLT]" blockType="command"
-    //% DE.shadow="dropdown" DE.options="DE" 
-    //% DERSLT.shadow="dropdown" DERSLT.options="DERSLT"
-    export function setEnable(parameter: any){
-        let de=parameter.DE.code;
-        let derslt=parameter.DERSLT.code;
-        if(de==="enable"){
-            Generator.addSetup("ID_"+derslt,`DFGT.enableFunction(${derslt});`)
-        }else{
-            Generator.addSetup("ID_"+derslt,`DFGT.disableFunction(${derslt});`)
+    //% block="Air Quality Monitor read [DAT] value" blockType="reporter"
+    //% DAT.shadow="dropdown" DAT.options="DAT"
+    export function readDate(parameter: any){
+        let dat=parameter.DAT.code;
+        switch(dat){
+            case "PM2.5":
+            Generator.addCode("AQM_SEN0233.DFRobot_SEN0233_getPMS()");
+            break;
+            case "Formaldehyde":
+            Generator.addCode("AQM_SEN0233.DFRobot_SEN0233_getFMHDS()");
+            break;
+            case "Temperature":
+            Generator.addCode("AQM_SEN0233.DFRobot_SEN0233_getTPS()");
+            break;
+            case "Humidity":
+            Generator.addCode("AQM_SEN0233.DFRobot_SEN0233_getHDS()");
+            break;
 
         }
         
     }
-
-
 
 
 }

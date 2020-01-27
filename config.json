@@ -10,16 +10,16 @@
   "auther": "liliang",
   "email": "969316753@qq.com",
   "license": "MIT",
-  "isTest": true,
+  "isTest": false,
   "isBoard": false,
-  "id": "AirQualityMonitor",
+  "id": "DFRobot_SEN0233_AirQualityMonitor",
   "platform": [
     "win"
   ],
   "asset": {
     "arduinoC": {
       "dir": "arduinoC/",
-      "version": "0.1.1",
+      "version": "0.0.1",
       "board": [
         "arduino"
       ],
@@ -28,11 +28,10 @@
         "_menus/arduino.json",
         "_locales/zh-cn.json",
         "_images/icon.svg",
-        "libraries/DFRobot_Gesture_Touch/DFRobot_Gesture_Touch.cpp",
-        "libraries/DFRobot_Gesture_Touch/DFRobot_Gesture_Touch.h",
-        //"libraries/includes.json",
-       // "libraries/DFRobot_Gesture_Touch/mpython/DFRobot_Gesture_Touch.cpp.o",
-       // "libraries/DFRobot_Gesture_Touch/microbit/DFRobot_Gesture_Touch.cpp.o"
+        "libraries/DFRobot_SEN0233_AirQualityMonitor/DFRobot_SEN0233_AirQualityMonitor.cpp",
+        "libraries/DFRobot_SEN0233_AirQualityMonitor/DFRobot_SEN0233_AirQualityMonitor.h",
+        "libraries/includes.json",
+        "libraries/DFRobot_SEN0233_AirQualityMonitor/uno/DFRobot_SEN0233_AirQualityMonitor.cpp.o"
       ]
     }
   }

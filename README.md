@@ -1,26 +1,26 @@
-# Gesture & Touch Sensor 手势识别触摸传感器
+# Air Quality Monitor 空气质量监测仪 - PM2.5, 甲醛, 温湿度
 
 
 
-<img src="https://github.com/liliang9693/ext-DFRobot_GestureTouchSensor/blob/master/arduinoC/_images/featured.png" width="450" height="300" align=center>
+<img src="https://github.com/liliang9693/ext-DFRobot_AirQualityMonitorSensor/blob/master/arduinoC/_images/featured.png" width="450" height="300" align=center>
 
 ---------------------------------------------------------
 
 
 ## 链接
-- **本用户库加载地址:** ```https://github.com/liliang9693/ext-DFRobot_GestureTouchSensor```
+- **本用户库加载地址:** ```https://github.com/liliang9693/ext-DFRobot_AirQualityMonitorSensor```
 - **Mind+下载地址：**```http://mindplus.cc```
 
 ## 简介
-- **产品链接：** ```https://www.dfrobot.com.cn/goods-1994.html```  
-- **介绍：** 本扩展库为DFRobot手势识别带触摸传感器（SEN0285）设计，支持Mind+导入库。
+- **产品链接：** ```https://www.dfrobot.com.cn/goods-1422.html```  
+- **介绍：** 本扩展库为DFRobot空气质量监测仪 (PM2.5, 甲醛, 温湿度)传感器（SEN0233）设计，从Mind+导入本库。
 
 ## Blocks
 
-![image](https://github.com/liliang9693/ext-DFRobot_GestureTouchSensor/blob/master/arduinoC/_images/block.png)
+![image](https://github.com/liliang9693/ext-DFRobot_AirQualityMonitorSensor/blob/master/arduinoC/_images/block.png)
 
 ## 示例
-![image](https://github.com/liliang9693/ext-DFRobot_GestureTouchSensor/blob/master/arduinoC/_images/example.png)
+![image](https://github.com/liliang9693/ext-DFRobot_AirQualityMonitorSensor/blob/master/arduinoC/_images/example.png)
 
 
 
@@ -37,6 +37,6 @@ mpython        |             |        √      |             |
 arduino uno    |             |        √      |             | 
 
 ## 更新日志
-- V0.1.0 20200126 第一版发布
-- V0.1.1 20200127 对硬串口增加board参数屏蔽microbit中得硬串口初始化block
+- V0.1.0 20200128 第一版发布
+
 
