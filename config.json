@@ -1,0 +1,39 @@
+{
+  "name": {
+    "zh-cn": "空气质量监测仪 ",
+    "en": "Air Quality Monitor"
+  },
+  "description": {
+    "zh-cn": "可测量PM2.5,甲醛，温湿度，工作电压5V。",
+    "en": "measure PM2.5, formaldehyde, temperature and humidity."
+  },
+  "auther": "liliang",
+  "email": "969316753@qq.com",
+  "license": "MIT",
+  "isTest": true,
+  "isBoard": false,
+  "id": "AirQualityMonitor",
+  "platform": [
+    "win"
+  ],
+  "asset": {
+    "arduinoC": {
+      "dir": "arduinoC/",
+      "version": "0.1.1",
+      "board": [
+        "arduino"
+      ],
+      "main": "main.ts",
+      "files": [
+        "_menus/arduino.json",
+        "_locales/zh-cn.json",
+        "_images/icon.svg",
+        "libraries/DFRobot_Gesture_Touch/DFRobot_Gesture_Touch.cpp",
+        "libraries/DFRobot_Gesture_Touch/DFRobot_Gesture_Touch.h",
+        //"libraries/includes.json",
+       // "libraries/DFRobot_Gesture_Touch/mpython/DFRobot_Gesture_Touch.cpp.o",
+       // "libraries/DFRobot_Gesture_Touch/microbit/DFRobot_Gesture_Touch.cpp.o"
+      ]
+    }
+  }
+}
