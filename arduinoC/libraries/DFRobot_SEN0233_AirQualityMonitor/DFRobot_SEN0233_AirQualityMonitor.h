@@ -59,11 +59,11 @@ class DFRobot_SEN0233_AirQualityMonitor
 public:
   DFRobot_SEN0233_AirQualityMonitor(Stream  *pSerial) { _pSerial = pSerial; }
 
-  int8_t    DFRobot_SEN0233_readData();
-  uint8_t    DFRobot_SEN0233_getPMS();
-  uint8_t    DFRobot_SEN0233_getFMHDS();
-  uint8_t    DFRobot_SEN0233_getTPS();
-  uint8_t    DFRobot_SEN0233_getHDS();
+  uint8_t    DFRobot_SEN0233_readData();
+  float    DFRobot_SEN0233_getPMS();
+  float    DFRobot_SEN0233_getFMHDS();
+  float    DFRobot_SEN0233_getTPS();
+  float    DFRobot_SEN0233_getHDS();
   
 private:
   AQM_SEN0233_data_t      _sRecv;

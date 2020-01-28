@@ -1,6 +1,6 @@
 {
   "name": {
-    "zh-cn": "空气质量监测仪 ",
+    "zh-cn": "空气质量监测仪(测试） ",
     "en": "Air Quality Monitor"
   },
   "description": {
@@ -10,7 +10,7 @@
   "auther": "liliang",
   "email": "969316753@qq.com",
   "license": "MIT",
-  "isTest": false,
+  "isTest": true,
   "isBoard": false,
   "id": "DFRobot_SEN0233_AirQualityMonitor",
   "platform": [

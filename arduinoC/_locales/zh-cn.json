@@ -1,6 +1,6 @@
 {
-    "DFRobot_SEN0233_AirQualityMonitor.beginSoftSerial|block": "空气质量传感器 初始化为[SSER] Rx(绿)[SSTXD] Tx(蓝) [SSRXD]",
-    "DFRobot_SEN0233_AirQualityMonitor.beginSerial|block": "空气质量传感器 初始化为[SER] Rx(绿)[TXD] Tx(蓝) [RXD]",
+    "DFRobot_SEN0233_AirQualityMonitor.beginSoftSerial|block": "空气质量传感器 初始化为 [SSER] Rx [SSRXD] Tx[SSTXD] ",
+    "DFRobot_SEN0233_AirQualityMonitor.beginSerial|block": "空气质量传感器 初始化为 [SER] Rx [RXD] Tx [TXD]",
     "DFRobot_SEN0233_AirQualityMonitor.readSensor|block": "空气质量传感器 读取刷新一次数据",
     "DFRobot_SEN0233_AirQualityMonitor.readDate|block": "空气质量传感器 读取[DAT]数据",
     "DFRobot_SEN0233_AirQualityMonitor.DAT.PM2.5|menu": "PM2.5",
