@@ -2,6 +2,7 @@
 //% color="#AA278D" iconWidth=50 iconHeight=40
 namespace DFRobot_SEN0233_AirQualityMonitor {
 
+    //% board="arduino"
     //% block="Air Quality Monitor Initliallize Pin [SSER] Rx[SSTXD] Tx[SSRXD]" blockType="command"
     //% SSER.shadow="dropdown" SSER.options="SSER"
     //% SSRXD.shadow="dropdown" SSRXD.options="SSRXD"
@@ -34,10 +35,16 @@ namespace DFRobot_SEN0233_AirQualityMonitor {
         let tx = parameter.TXD.code;
 
             Generator.addInclude("includeAQM","#include <DFRobot_SEN0233_AirQualityMonitor.h>");
-
             Generator.addObject("AQMObject"+ser,"DFRobot_SEN0233_AirQualityMonitor",`AQM_SEN0233(&${ser});`);
 
-            Generator.addSetup("AQMSerialSetup",`${ser}.begin(9600);`);
+            if(Generator.board==="arduino"){
+                Generator.addSetup("AQMSerialSetup",`${ser}.begin(9600);`);
+            }else if(Generator.board==="esp32"){
+                Generator.addSetup("AQMSerialSetup",`${ser}.begin(9600,${rx},${tx});`);
+            }
+           
+
+            
 
     }
 

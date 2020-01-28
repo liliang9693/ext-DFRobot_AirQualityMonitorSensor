@@ -1,6 +1,6 @@
 {
   "name": {
-    "zh-cn": "空气质量监测仪(测试） ",
+    "zh-cn": "空气质量监测仪 ",
     "en": "Air Quality Monitor"
   },
   "description": {
@@ -19,19 +19,21 @@
   "asset": {
     "arduinoC": {
       "dir": "arduinoC/",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "board": [
-        "arduino"
+        "arduino","esp32"
       ],
       "main": "main.ts",
       "files": [
         "_menus/arduino.json",
+        "_menus/esp32.json",
         "_locales/zh-cn.json",
         "_images/icon.svg",
         "libraries/DFRobot_SEN0233_AirQualityMonitor/DFRobot_SEN0233_AirQualityMonitor.cpp",
         "libraries/DFRobot_SEN0233_AirQualityMonitor/DFRobot_SEN0233_AirQualityMonitor.h",
         "libraries/includes.json",
-        "libraries/DFRobot_SEN0233_AirQualityMonitor/uno/DFRobot_SEN0233_AirQualityMonitor.cpp.o"
+        "libraries/DFRobot_SEN0233_AirQualityMonitor/uno/DFRobot_SEN0233_AirQualityMonitor.cpp.o",
+        "libraries/DFRobot_SEN0233_AirQualityMonitor/mpython/DFRobot_SEN0233_AirQualityMonitor.cpp.o"
       ]
     }
   }

@@ -32,7 +32,7 @@ MIT
 MCU                | JavaScript    | Arduino   | MicroPython    | Remarks
 ------------------ | :----------: | :----------: | :---------: | -----
 micro:bit        |             |       x       |             | 
-mpython        |             |        x      |             | 
+mpython        |             |        √      |             | 
 arduino uno    |             |        √      |             | 
 
 ## 鸣谢
@@ -40,5 +40,6 @@ arduino uno    |             |        √      |             |
 
 ## 更新日志
 - V0.1.0 20200128 第一版发布
+- V0.1.1 20200128 增加mpython支持
 
 
