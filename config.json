@@ -10,7 +10,7 @@
   "auther": "liliang",
   "email": "969316753@qq.com",
   "license": "MIT",
-  "isTest": true,
+  "isTest": false,
   "isBoard": false,
   "id": "DFRobot_SEN0233_AirQualityMonitor",
   "platform": [

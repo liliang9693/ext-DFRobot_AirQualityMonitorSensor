@@ -30,35 +30,36 @@ uint8_t DFRobot_SEN0233_AirQualityMonitor::DFRobot_SEN0233_readData()
 
     while(_pSerial->available()) {
       if(_pSerial->read() == DFGT_RECV_HEAD1) {
-        delay(5);
+        delay(2);
         if(_pSerial->read() == DFGT_RECV_HEAD2) {
             for(i = 0; i < sizeof(_sRecv); i ++){
               pRecv[i] = _pSerial->read();
-              Serial.print(pRecv[i], HEX);
+              //Serial.print(pRecv[i], HEX);
               if(i<(sizeof(_sRecv)-2)) CR2+=pRecv[i];
               delay(2);
             }
-            Serial.println(" ");
-            Serial.println(_sRecv.cr1, HEX);
-            Serial.println(_sRecv.cr2, HEX);
+            //Serial.println(" ");
+            //Serial.println(_sRecv.cr1, HEX);
+            //Serial.println(_sRecv.cr2, HEX);
             CR2=CR2+0x42+0x4d;
             CR1=(((uint16_t)_sRecv.cr1)<<8)+_sRecv.cr2;
-            Serial.println(CR1, HEX);
-            Serial.println(CR2, HEX);
+            //Serial.println(CR1, HEX);
+            //Serial.println(CR2, HEX);
             if(CR1!=CR2){
                 for(i = 0; i < sizeof(_sRecv); i ++){
                   pRecv[i] = 0;
                 }
-                delay(5);
-                Serial.println("CHECK_ERR");delay(5);
+                //delay(2);
+                //Serial.println("CHECK_ERR");
+                //delay(2);
               return CHECK_ERR;
             }
-            Serial.println("DF_OK");
+            //Serial.println("DF_OK");
             return DF_OK;  
           }
         }
     }
-    Serial.println("READ_ERR");
+    //Serial.println("READ_ERR");
     return READ_ERR;
 
 
