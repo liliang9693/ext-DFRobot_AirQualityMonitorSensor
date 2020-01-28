@@ -31,8 +31,8 @@ MIT
 
 MCU                | JavaScript    | Arduino   | MicroPython    | Remarks
 ------------------ | :----------: | :----------: | :---------: | -----
-micro:bit        |             |       √       |             | 
-mpython        |             |        √      |             | 
+micro:bit        |             |       x       |             | 
+mpython        |             |        x      |             | 
 arduino uno    |             |        √      |             | 
 
 ## 更新日志
